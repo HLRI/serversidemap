@@ -28,7 +28,7 @@
 
         </div>
         <div class="row mb-3">
-            <div class="wrap-filter-menu">
+            <div class="wrap-filter-menu scrolling-wrapper row flex-row flex-nowrap">
                 <button class="btn btn-light">Price Range</button>
                 <button class="btn btn-light">Price Range</button>
                 <button class="btn btn-light">Price Range</button>
