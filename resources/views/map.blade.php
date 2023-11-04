@@ -27,24 +27,22 @@
         <div class="row">
 
         </div>
-        <div class="row mb-3">
-            <div class="wrap-filter-menu scrolling-wrapper row flex-row flex-nowrap">
-                <button class="btn btn-light">Price Range</button>
-                <button class="btn btn-light">Price Range</button>
-                <button class="btn btn-light">Price Range</button>
-                <button class="btn btn-light">Price Range</button>
-                <button class="btn btn-light">Price Range</button>
-                <button class="btn btn-light">Price Range</button>
-                <button class="btn btn-light">Price Range</button>
-                <button class="btn btn-light">Price Range</button>
-                <button class="btn btn-light">Price Range</button>
-                <button class="btn btn-light">Price Range</button>
-                <button class="btn btn-light">Price Range</button>
-                <button class="btn btn-light">Price Range</button>
-                <button class="btn btn-light">Price Range</button>
-                <button class="btn btn-light">Price Range</button>
-                <button class="btn btn-light">Price Range</button>
-            </div>
+        <div class="mb-3 wrap-filter-menu scrolling-wrapper row flex-row flex-nowrap">
+            <button class="btn btn-light">Price Range</button>
+            <button class="btn btn-light">Price Range</button>
+            <button class="btn btn-light">Price Range</button>
+            <button class="btn btn-light">Price Range</button>
+            <button class="btn btn-light">Price Range</button>
+            <button class="btn btn-light">Price Range</button>
+            <button class="btn btn-light">Price Range</button>
+            <button class="btn btn-light">Price Range</button>
+            <button class="btn btn-light">Price Range</button>
+            <button class="btn btn-light">Price Range</button>
+            <button class="btn btn-light">Price Range</button>
+            <button class="btn btn-light">Price Range</button>
+            <button class="btn btn-light">Price Range</button>
+            <button class="btn btn-light">Price Range</button>
+            <button class="btn btn-light">Price Range</button>
         </div>
         <div class="row">
             <div class="col-lg-8">
