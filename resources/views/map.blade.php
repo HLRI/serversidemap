@@ -10,12 +10,12 @@
     {{-- <link rel="stylesheet" href="{{ asset('css/plugins/fontawesome-free-6.2.0-web/css/all.min.css') }}"> --}}
     {{-- <link rel="stylesheet" href="{{ asset('css/plugins/L.Control.Locate.css') }}"> --}}
     {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" /> --}}
-    {{-- <link rel="stylesheet" href="{{ asset('css/MarkerCluster.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/MarkerCluster.Default.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/leaflet-search.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/MarkerCluster.css') }}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('css/MarkerCluster.Default.css') }}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('css/leaflet-search.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('css/plugins/jquery-ui.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/plugins/easy-button.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/plugins/Control.FullScreen.min.css') }}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('css/plugins/easy-button.css') }}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('css/plugins/Control.FullScreen.min.css') }}"> --}}
     {{-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> --}}
     {{-- <link rel="stylesheet" href="{{ asset('css/plugins/switcher.css') }}"> --}}
     {{-- <link rel="stylesheet" type="text/css"
@@ -28,21 +28,12 @@
 
         </div>
         <div class="mb-3 wrap-filter-menu scrolling-wrapper row flex-row flex-nowrap">
-            <button class="btn btn-light">Price Range</button>
-            <button class="btn btn-light">Price Range</button>
-            <button class="btn btn-light">Price Range</button>
-            <button class="btn btn-light">Price Range</button>
-            <button class="btn btn-light">Price Range</button>
-            <button class="btn btn-light">Price Range</button>
-            <button class="btn btn-light">Price Range</button>
-            <button class="btn btn-light">Price Range</button>
-            <button class="btn btn-light">Price Range</button>
-            <button class="btn btn-light">Price Range</button>
-            <button class="btn btn-light">Price Range</button>
-            <button class="btn btn-light">Price Range</button>
-            <button class="btn btn-light">Price Range</button>
-            <button class="btn btn-light">Price Range</button>
-            <button class="btn btn-light">Price Range</button>
+            <button class="hlr-btn hlr-btn-grey" data-bs-toggle="modal" data-bs-target="#price-range">Price Range</button>
+            <button class="hlr-btn hlr-btn-grey" data-bs-toggle="modal" data-bs-target="#suite-size">Suite Size</button>
+            <button class="hlr-btn hlr-btn-grey" data-bs-toggle="modal" data-bs-target="#price-range">Beds</button>
+            <button class="hlr-btn hlr-btn-grey" data-bs-toggle="modal" data-bs-target="#price-range">Baths</button>
+            <button class="hlr-btn hlr-btn-grey" data-bs-toggle="modal" data-bs-target="#price-range">Occupancy</button>
+            <button class="hlr-btn hlr-btn-red" data-bs-toggle="modal" data-bs-target="#price-range">Reset Filters</button>
         </div>
         <div class="row">
             <div class="col-lg-8">
@@ -126,9 +117,56 @@
     </div>
 
 
+    <div class="modal fade" id="price-range" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Price Range</h1>
+                </div>
+                <div class="modal-body px-5">
+                    <input class="border-0 mb-2" type="text" id="amount" readonly>
+                    <div id="slider-range"></div>
+                    <div class="price form-wrap-range">
+                        <input min="200000" class="min" type="text" placeholder="min">
+                        <input max="10000000" class="max" type="text" placeholder="max">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="hlr-btn hlr-btn-red" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="hlr-btn hlr-btn-green">Set Filter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="suite-size" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Suite Size</h1>
+                </div>
+                <div class="modal-body px-5">
+                    <input class="border-0 mb-2" type="text" id="suitesize" readonly>
+                    <div id="slider-range-suitesize"></div>
+                    <div class="suitesize form-wrap-range">
+                        <input min="200000" class="min" type="text" placeholder="min">
+                        <input max="10000000" class="max" type="text" placeholder="max">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="hlr-btn hlr-btn-red" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="hlr-btn hlr-btn-green">Set Filter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script src="{{ asset('js/plugins/jquery-3.6.0.js') }}"></script>
-    {{-- <script src="{{ asset('js/plugins/jquery-ui.js') }}"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+    <script src="{{ asset('js/plugins/jquery-ui.js') }}"></script>
     <script src="{{ asset('js/plugins/leaflet.js') }}"></script>
     {{-- <script src="{{ asset('js/leaflet.markercluster-src.js') }}"></script> --}}
     {{-- <script src="{{ asset('js/plugins/easy-button.js') }}"></script> --}}
@@ -143,7 +181,7 @@
         var getFilter_url = <?= "'" . route('getFilter') . "'" ?>;
     </script> --}}
 
-    {{-- <script src="{{ asset('js/plugins/Control.FullScreen.js') }}"></script>
+    <script src="{{ asset('js/plugins/Control.FullScreen.js') }}"></script>
     <script src="{{ asset('js/plugins/sweetalert2@11.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="{{ asset('js/plugins/checkboxselect2.js') }}"></script>
@@ -156,7 +194,7 @@
     <script src="{{ asset('js/filter-map.js') }}"></script>
     <script src="{{ asset('js/filters-scripts.js') }}"></script>
     <script src="{{ asset('js/make-layers.js') }}"></script>
-    <script src="{{ asset('js/init.js') }}"></script> --}}
+    <script src="{{ asset('js/init.js') }}"></script>
     <script src="{{ asset('js/myscript.js') }}"></script>
 </body>
 
