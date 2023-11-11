@@ -113,6 +113,7 @@ html .ui-button.ui-state-disabled:active {
     outline: none;
     padding: 5px 10px;
     border-radius: 8px;
+    width: 100%;
 }
 
 .hlr-btn {

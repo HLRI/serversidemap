@@ -7,7 +7,7 @@
     <title>Hlric Map</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('css/plugins/leaflet.css') }}">
-    {{-- <link rel="stylesheet" href="{{ asset('css/plugins/fontawesome-free-6.2.0-web/css/all.min.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('css/plugins/fontawesome-free-6.2.0-web/css/all.min.css') }}">
     {{-- <link rel="stylesheet" href="{{ asset('css/plugins/L.Control.Locate.css') }}"> --}}
     {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" /> --}}
     {{-- <link rel="stylesheet" href="{{ asset('css/MarkerCluster.css') }}"> --}}
@@ -28,12 +28,14 @@
 
         </div>
         <div class="mb-3 wrap-filter-menu scrolling-wrapper row flex-row flex-nowrap">
-            <button class="hlr-btn hlr-btn-grey" data-bs-toggle="modal" data-bs-target="#price-range">Price Range</button>
-            <button class="hlr-btn hlr-btn-grey" data-bs-toggle="modal" data-bs-target="#suite-size">Suite Size</button>
-            <button class="hlr-btn hlr-btn-grey" data-bs-toggle="modal" data-bs-target="#price-range">Beds</button>
-            <button class="hlr-btn hlr-btn-grey" data-bs-toggle="modal" data-bs-target="#price-range">Baths</button>
-            <button class="hlr-btn hlr-btn-grey" data-bs-toggle="modal" data-bs-target="#price-range">Occupancy</button>
-            <button class="hlr-btn hlr-btn-red" data-bs-toggle="modal" data-bs-target="#price-range">Reset Filters</button>
+            <button class="hlr-btn hlr-btn-grey" data-bs-toggle="modal" data-bs-target="#price-range"><i class="fa-solid fa-filter-list"></i> Price
+                Range</button>
+            <button class="hlr-btn hlr-btn-grey" data-bs-toggle="modal" data-bs-target="#suite-size"><i class="fa-solid fa-filter-list"></i> Suite Size</button>
+            <button class="hlr-btn hlr-btn-grey" data-bs-toggle="modal" data-bs-target="#beds-modal"><i class="fa-solid fa-filter-list"></i> Beds</button>
+            <button class="hlr-btn hlr-btn-grey" data-bs-toggle="modal" data-bs-target="#baths-modal"><i class="fa-solid fa-filter-list"></i> Baths</button>
+            <button class="hlr-btn hlr-btn-grey" data-bs-toggle="modal" data-bs-target="#occupancy-modal"><i class="fa-solid fa-filter-list"></i> Occupancy</button>
+            <button class="hlr-btn hlr-btn-red" data-bs-toggle="modal" data-bs-target="#price-range"><i class="fa fa-refresh"></i> Reset
+                Filters</button>
         </div>
         <div class="row">
             <div class="col-lg-8">
@@ -154,6 +156,65 @@
                         <input min="200000" class="min" type="text" placeholder="min">
                         <input max="10000000" class="max" type="text" placeholder="max">
                     </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="hlr-btn hlr-btn-red" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="hlr-btn hlr-btn-green">Set Filter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="beds-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Beds</h1>
+                </div>
+                <div class="modal-body px-5">
+                    <input class="border-0 mb-2" type="text" id="beds" readonly>
+                    <div id="slider-range-beds"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="hlr-btn hlr-btn-red" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="hlr-btn hlr-btn-green">Set Filter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="baths-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Baths</h1>
+                </div>
+                <div class="modal-body px-5">
+                    <input class="border-0 mb-2" type="text" id="baths"
+                    readonly>
+                <div id="slider-range-baths"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="hlr-btn hlr-btn-red" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="hlr-btn hlr-btn-green">Set Filter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="occupancy-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Occupancy</h1>
+                </div>
+                <div class="modal-body px-5">
+                    <input class="border-0 mb-2" type="text" id="occupancy"
+                    readonly>
+                <div id="slider-range-occupancy"></div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="hlr-btn hlr-btn-red" data-bs-dismiss="modal">Cancel</button>
